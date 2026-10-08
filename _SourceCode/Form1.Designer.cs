@@ -125,8 +125,8 @@ namespace WorkerClock
             this.eXiTToolStripMenuItem});
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.menuToolStripMenuItem.Text = "SmartWatch2";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.menuToolStripMenuItem.Text = "SmartWatch";
             // 
             // beepWinFormToolStripMenuItem
             // 
