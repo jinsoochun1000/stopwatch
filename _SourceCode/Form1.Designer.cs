@@ -30,6 +30,7 @@ namespace WorkerClock
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lbTime1 = new System.Windows.Forms.Label();
             this.lbTime2 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
@@ -44,9 +45,11 @@ namespace WorkerClock
             this.doremiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configSaveiniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMin5010 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMinites10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemMinites05 = new System.Windows.Forms.ToolStripMenuItem();
+            this.seconds570ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.second350ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXiTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbWeekDay = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
@@ -122,8 +125,8 @@ namespace WorkerClock
             this.eXiTToolStripMenuItem});
             this.menuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
-            this.menuToolStripMenuItem.Text = "WorkerWatch";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.menuToolStripMenuItem.Text = "SmartWatch2";
             // 
             // beepWinFormToolStripMenuItem
             // 
@@ -132,7 +135,7 @@ namespace WorkerClock
             this.exclamationToolStripMenuItem,
             this.doremiToolStripMenuItem});
             this.beepWinFormToolStripMenuItem.Name = "beepWinFormToolStripMenuItem";
-            this.beepWinFormToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.beepWinFormToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.beepWinFormToolStripMenuItem.Text = "Beep Win Form";
             // 
             // beepToolStripMenuItem
@@ -160,11 +163,13 @@ namespace WorkerClock
             // 
             this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configSaveiniToolStripMenuItem,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
+            this.toolStripMenuItemMin5010,
+            this.toolStripMenuItemMinites10,
+            this.toolStripMenuItemMinites05,
+            this.seconds570ToolStripMenuItem,
+            this.second350ToolStripMenuItem});
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.configToolStripMenuItem.Text = "Config";
             // 
             // configSaveiniToolStripMenuItem
@@ -174,28 +179,45 @@ namespace WorkerClock
             this.configSaveiniToolStripMenuItem.Text = "ConfigSaveini";
             this.configSaveiniToolStripMenuItem.Click += new System.EventHandler(this.configSaveiniToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
+            // toolStripMenuItemMin5010
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(147, 22);
-            this.toolStripMenuItem2.Text = "Min50+10";
+            this.toolStripMenuItemMin5010.Name = "toolStripMenuItemMin5010";
+            this.toolStripMenuItemMin5010.Size = new System.Drawing.Size(147, 22);
+            this.toolStripMenuItemMin5010.Text = "Minites50+10";
+            this.toolStripMenuItemMin5010.Click += new System.EventHandler(this.toolStripMenuItemMin5010_Click);
             // 
-            // toolStripMenuItem3
+            // toolStripMenuItemMinites10
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(147, 22);
-            this.toolStripMenuItem3.Text = "60";
+            this.toolStripMenuItemMinites10.Name = "toolStripMenuItemMinites10";
+            this.toolStripMenuItemMinites10.Size = new System.Drawing.Size(147, 22);
+            this.toolStripMenuItemMinites10.Text = "Minites10";
+            this.toolStripMenuItemMinites10.Click += new System.EventHandler(this.toolStripMenuItemMinites10_Click);
             // 
-            // toolStripMenuItem4
+            // toolStripMenuItemMinites05
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(147, 22);
-            this.toolStripMenuItem4.Text = "Minites30";
+            this.toolStripMenuItemMinites05.Name = "toolStripMenuItemMinites05";
+            this.toolStripMenuItemMinites05.Size = new System.Drawing.Size(147, 22);
+            this.toolStripMenuItemMinites05.Text = "Minites05";
+            this.toolStripMenuItemMinites05.Click += new System.EventHandler(this.toolStripMenuItemMinites05_Click);
+            // 
+            // seconds570ToolStripMenuItem
+            // 
+            this.seconds570ToolStripMenuItem.Name = "seconds570ToolStripMenuItem";
+            this.seconds570ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.seconds570ToolStripMenuItem.Text = "Second570";
+            this.seconds570ToolStripMenuItem.Click += new System.EventHandler(this.seconds570ToolStripMenuItem_Click);
+            // 
+            // second350ToolStripMenuItem
+            // 
+            this.second350ToolStripMenuItem.Name = "second350ToolStripMenuItem";
+            this.second350ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.second350ToolStripMenuItem.Text = "Second350";
+            this.second350ToolStripMenuItem.Click += new System.EventHandler(this.second350ToolStripMenuItem_Click);
             // 
             // eXiTToolStripMenuItem
             // 
             this.eXiTToolStripMenuItem.Name = "eXiTToolStripMenuItem";
-            this.eXiTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eXiTToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.eXiTToolStripMenuItem.Text = "EXiT";
             this.eXiTToolStripMenuItem.Click += new System.EventHandler(this.eXiTToolStripMenuItem_Click);
             // 
@@ -224,6 +246,7 @@ namespace WorkerClock
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
@@ -254,10 +277,12 @@ namespace WorkerClock
         private System.Windows.Forms.ToolStripMenuItem configToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configSaveiniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eXiTToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMin5010;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMinites10;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemMinites05;
         private System.Windows.Forms.Label lbWeekDay;
+        private System.Windows.Forms.ToolStripMenuItem seconds570ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem second350ToolStripMenuItem;
     }
 }
 

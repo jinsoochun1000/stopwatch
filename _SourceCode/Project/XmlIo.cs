@@ -21,8 +21,8 @@ namespace WorkerClock
         {
             if (!Directory.Exists(path)) Directory.CreateDirectory(path);
 
-            string fileName = string.Format(@"{0}\TRKConfig.ini", path);
-            if (trkconfig == null) return ShowErrorMsg("TRKConfig 객체가 생성되지 않았습니다.");
+            string fileName = string.Format(@"{0}\config.xml", path);
+            if (trkconfig == null) return ShowErrorMsg("Config 객체가 생성되지 않았습니다.");
             try
             {
                 TextWriter writer = new StreamWriter(fileName);
@@ -39,7 +39,7 @@ namespace WorkerClock
 
         public TRKConfig ReadTRKConfig(string path)
         {
-            string fileName = string.Format(@"{0}\TRKConfig.ini", path);
+            string fileName = string.Format(@"{0}\config.xml", path);
             TRKConfig trkconfig = new TRKConfig();
             if (!File.Exists(fileName)) return trkconfig;
             try

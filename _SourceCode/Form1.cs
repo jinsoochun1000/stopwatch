@@ -54,7 +54,8 @@ namespace WorkerClock
             timer1.Start();
 
             // 환경설정파일 위치 
-            _path_ini = Application.StartupPath + @"\ini";
+            //_path_ini = Application.StartupPath + @"\ini";
+            _path_ini = Application.StartupPath;
             ConfigOpenini();
             GetWeekOfYear();
         }
@@ -120,30 +121,31 @@ namespace WorkerClock
 
                 if (_trkcfg.AlaramTypeHMS == "H")
                 {
-                    if (stopwatch.Elapsed.Hours >= _trkcfg.AlarmTimeHour)
+                    if (stopwatch.Elapsed.TotalHours >= _trkcfg.AlarmTimeHour)
                     {
                         timerBeep.Start();
                     }
                 }
                 else if (_trkcfg.AlaramTypeHMS == "M")
                 {
-                    if (stopwatch.Elapsed.Minutes * _trkcfg.AlarmTimeMinites >= _trkcfg.AlarmTimeMinites)
-                    {
-                        timerBeep.Start();
+                    //if (stopwatch.Elapsed.Minutes * _trkcfg.AlarmTimeMinites >= _trkcfg.AlarmTimeMinites)
+                    //if (stopwatch.Elapsed.Minutes >= _trkcfg.AlarmTimeMinites)
+                    if (stopwatch.Elapsed.TotalMinutes >= _trkcfg.AlarmTimeMinites)
+                        {
+                            timerBeep.Start();
                     }
                 }
                 else // (_trkcfg.AlaramTypeHMS == "S")
-
-                if (stopwatch.Elapsed.Seconds >= _trkcfg.AlarmTimeSecond)
                 {
-                    timerBeep.Start();
+                    //if (stopwatch.Elapsed.Seconds >= _trkcfg.AlarmTimeSecond)
+                    if (stopwatch.Elapsed.TotalSeconds >= _trkcfg.AlarmTimeSecond)
+                        {
+                            timerBeep.Start();
+                    }
                 }
             }
-
             lbTime1.Text = _Time1;
             lbTime2.Text = _Time2;
-
-
         }
 
         static Calendar cal = new GregorianCalendar();
@@ -350,6 +352,46 @@ namespace WorkerClock
                 timer1.Stop();
             }
             this.Close();
+        }
+
+        private void toolStripMenuItemMinites10_Click(object sender, EventArgs e)
+        {
+            _trkcfg.AlaramTypeHMS = "M";
+            _trkcfg.AlarmTimeMinites = 10;
+            ConfigSaveini();
+            ConfigOpenini();
+        }
+
+        private void toolStripMenuItemMinites05_Click(object sender, EventArgs e)
+        {
+            _trkcfg.AlaramTypeHMS = "M";
+            _trkcfg.AlarmTimeMinites = 5;
+            ConfigSaveini();
+            ConfigOpenini();
+        }
+
+        private void toolStripMenuItemMin5010_Click(object sender, EventArgs e)
+        {
+            _trkcfg.AlaramTypeHMS = "M";
+            _trkcfg.AlarmTimeMinites = 50;
+            ConfigSaveini();
+            ConfigOpenini();
+        }
+
+        private void seconds570ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _trkcfg.AlaramTypeHMS = "S";
+            _trkcfg.AlarmTimeMinites = 570;
+            ConfigSaveini();
+            ConfigOpenini();
+        }
+
+        private void second350ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _trkcfg.AlaramTypeHMS = "S";
+            _trkcfg.AlarmTimeMinites = 350;
+            ConfigSaveini();
+            ConfigOpenini();
         }
 
         //
